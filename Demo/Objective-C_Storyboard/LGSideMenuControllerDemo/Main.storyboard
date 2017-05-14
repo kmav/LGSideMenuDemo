@@ -203,32 +203,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageRoot.png" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-rv-Fkj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2q-EA-ea6">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="968-GI-bjh"/>
-                                </constraints>
-                                <state key="normal" title="Show Choose Controller">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.0" green="0.5" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showChooseController:" destination="wBU-AO-3fi" eventType="touchUpInside" id="iEg-YF-B7r"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GoA-rv-Fkj" firstAttribute="leading" secondItem="nuG-fh-uKV" secondAttribute="leading" id="0Hi-Tq-rfz"/>
-                            <constraint firstItem="Ilz-ms-4rO" firstAttribute="top" secondItem="Z2q-EA-ea6" secondAttribute="bottom" id="1aL-jB-bGt"/>
                             <constraint firstItem="GoA-rv-Fkj" firstAttribute="top" secondItem="nuG-fh-uKV" secondAttribute="top" id="Ojd-G2-dRN"/>
                             <constraint firstAttribute="trailing" secondItem="GoA-rv-Fkj" secondAttribute="trailing" id="WS9-Vd-ysY"/>
                             <constraint firstAttribute="bottom" secondItem="GoA-rv-Fkj" secondAttribute="bottom" id="dfv-4R-zh6"/>
-                            <constraint firstItem="Z2q-EA-ea6" firstAttribute="leading" secondItem="nuG-fh-uKV" secondAttribute="leading" id="fHF-rh-Hn3"/>
-                            <constraint firstAttribute="trailing" secondItem="Z2q-EA-ea6" secondAttribute="trailing" id="oYa-P0-reY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LGSideMenuController" id="jua-jC-TbI">
@@ -237,62 +218,12 @@
                                 <action selector="showLeftViewAnimated:" destination="wBU-AO-3fi" id="fnf-2e-Znm"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Right" id="Muv-7A-abZ">
-                            <connections>
-                                <action selector="showRightViewAnimated:" destination="wBU-AO-3fi" id="e9b-tt-n1W"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeL-Fy-HB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="573"/>
-        </scene>
-        <!--LGSideMenuController-->
-        <scene sceneID="2ot-PQ-MsJ">
-            <objects>
-                <tableViewController storyboardIdentifier="OtherViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aV5-IE-jEu" customClass="OtherViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xvf-Xa-Rwp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="A7H-wb-9GX" style="IBUITableViewCellStyleDefault" id="O7m-o5-I1g">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O7m-o5-I1g" id="UeH-bt-D0C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="You can delete me by swipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A7H-wb-9GX">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="aV5-IE-jEu" id="FWk-5N-1tv"/>
-                            <outlet property="delegate" destination="aV5-IE-jEu" id="PLv-iB-ztb"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="LGSideMenuController" id="pbv-Zh-8gu">
-                        <barButtonItem key="rightBarButtonItem" title="Choose" id="2La-We-zpS">
-                            <connections>
-                                <action selector="showChooseController:" destination="aV5-IE-jEu" id="Ra7-7F-kCE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JZ5-9J-nb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="838" y="-144"/>
         </scene>
     </scenes>
     <resources>

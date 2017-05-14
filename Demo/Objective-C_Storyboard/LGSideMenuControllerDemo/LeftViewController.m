@@ -24,8 +24,6 @@
 
     self.titlesArray = @[@"Open Right View",
                          @"",
-                         @"Change Root VC",
-                         @"",
                          @"Profile",
                          @"News",
                          @"Articles",
@@ -61,8 +59,8 @@
     LeftViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
     cell.titleLabel.text = self.titlesArray[indexPath.row];
-    cell.separatorView.hidden = (indexPath.row <= 3 || indexPath.row == self.titlesArray.count-1);
-    cell.userInteractionEnabled = (indexPath.row != 1 && indexPath.row != 3);
+    cell.separatorView.hidden = (indexPath.row <= 1 || indexPath.row == self.titlesArray.count-1);
+    cell.userInteractionEnabled = (indexPath.row != 1);
 
     return cell;
 }
@@ -84,24 +82,7 @@
             }];
         }
     }
-    else if (indexPath.row == 2) {
-        UINavigationController *navigationController = (UINavigationController *)mainViewController.rootViewController;
-        UIViewController *viewController;
-
-        if ([navigationController.viewControllers.firstObject isKindOfClass:[ViewController class]]) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"OtherViewController"];
-        }
-        else {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-        }
-
-        [navigationController setViewControllers:@[viewController]];
-
-        // Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
-        // You can use delay to avoid this and probably other unexpected visual bugs
-        [mainViewController hideLeftViewAnimated:YES delay:0.0 completionHandler:nil];
-    }
-    else {
+    else  {
         UIViewController *viewController = [UIViewController new];
         viewController.view.backgroundColor = [UIColor whiteColor];
         viewController.title = self.titlesArray[indexPath.row];
