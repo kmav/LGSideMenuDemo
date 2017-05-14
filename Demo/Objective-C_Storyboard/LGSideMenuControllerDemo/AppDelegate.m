@@ -27,7 +27,9 @@
     [navigationController setViewControllers:@[[storyboard instantiateViewControllerWithIdentifier:@"ViewController"]]];
 
     MainViewController *mainViewController = [storyboard instantiateInitialViewController];
+    
     mainViewController.rootViewController = navigationController;
+    
     [mainViewController setupWithType:2];
     
     UIWindow *window = UIApplication.sharedApplication.delegate.window;
@@ -39,23 +41,6 @@
                     animations:nil
                     completion:nil];
 
-    
-    int systemVersion = [[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."][0] intValue];
-    if (systemVersion >= 7) {
-        // [self.window setTintColor:[UIColor colorWithRed:0.00 green:0.40 blue:0.00 alpha:1.0]];
-        // EMOS1 logo color: [UIColor colorWithRed:0.20 green:0.60 blue:0.20 alpha:1.0]
-        UIColor *tintGrey = [UIColor colorWithRed:89/255.0 green:111/255.0 blue:124/255.0 alpha:1.0];
-        UIColor *tintGreen = [UIColor colorWithRed:0.20 green:0.60 blue:0.20 alpha:1.0];
-        [self.window setTintColor:tintGrey];
-        // navigation bar
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        [[UINavigationBar appearance]
-         setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-        // [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-        [[UINavigationBar appearance] setBarTintColor:tintGrey];
-        // [[UINavigationBar appearance] setTranslucent:NO];
-            }
-    
     NSLog(@"UIDevice identifierForVendor = %@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]);
     
     

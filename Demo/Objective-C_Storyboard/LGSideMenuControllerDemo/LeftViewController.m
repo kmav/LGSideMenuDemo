@@ -25,10 +25,7 @@
     self.titlesArray = @[@"Open Right View",
                          @"",
                          @"Profile",
-                         @"News",
-                         @"Articles",
-                         @"Video",
-                         @"Music"];
+                         @"Settings"];
 
     // -----
 
@@ -83,7 +80,9 @@
         }
     }
     else  {
-        UIViewController *viewController = [UIViewController new];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:self.titlesArray[indexPath.row]];
+        // UIViewController *viewController = [UIViewController new];
         viewController.view.backgroundColor = [UIColor whiteColor];
         viewController.title = self.titlesArray[indexPath.row];
 
